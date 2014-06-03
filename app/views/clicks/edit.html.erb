@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h1>Edit Click #<%= @click.id %></h1>
+</div>
+
+<% if @click.errors.any? %>
+  <% @click.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_click/<%= @click.id %>" class="form-horizontal">
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id" class="col-sm-2 control-label">
+      User
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @click.user_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for activity_id -->
+  <div class="form-group">
+    <label for="activity_id" class="col-sm-2 control-label">
+      Activity
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="activity_id" name="activity_id" placeholder="Activity" class="form-control" value="<%= @click.activity_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for activity -->
+  <div class="form-group">
+    <label for="activity" class="col-sm-2 control-label">
+      Activity
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="activity" name="activity" placeholder="Activity" class="form-control" value="<%= @click.activity %>">
+    </div>
+  </div>
+
+  <!-- Label and input for click_time -->
+  <div class="form-group">
+    <label for="click_time" class="col-sm-2 control-label">
+      Click time
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="click_time" name="click_time" placeholder="Click time" class="form-control" value="<%= @click.click_time %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Click" class="btn btn-primary">
+    </div>
+  </div>
+</form>

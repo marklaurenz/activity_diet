@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1>Add Idea</h1>
+</div>
+
+<% if @idea.errors.any? %>
+  <% @idea.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_idea" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Idea" class="btn btn-primary">
+    </div>
+  </div>
+</form>

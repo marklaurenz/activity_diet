@@ -1,0 +1,20 @@
+<div class="page-header">
+  <h1>Edit Idea #<%= @idea.id %></h1>
+</div>
+
+<% if @idea.errors.any? %>
+  <% @idea.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_idea/<%= @idea.id %>" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Idea" class="btn btn-primary">
+    </div>
+  </div>
+</form>

@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Activities</h1>
+</div>
+
+<p><a href="/activities/new" class="btn btn-primary">Add a New Activity</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Min people</th>
+      <th>Season</th>
+      <th>Zip</th>
+      <th>Website</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.description %></td>
+        <td><%= activity.min_people %></td>
+        <td><%= activity.season %></td>
+        <td><%= activity.zip %></td>
+        <td><%= activity.website %></td>
+        <td>
+          <a href="/activities/<%= activity.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/activities/<%= activity.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_activity/<%= activity.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

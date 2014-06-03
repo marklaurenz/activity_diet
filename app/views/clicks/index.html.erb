@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Clicks</h1>
+</div>
+
+<p><a href="/clicks/new" class="btn btn-primary">Add a New Click</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Activity</th>
+      <th>Activity</th>
+      <th>Click time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clicks.each do |click| %>
+      <tr>
+        <td><%= click.user_id %></td>
+        <td><%= click.activity_id %></td>
+        <td><%= click.activity %></td>
+        <td><%= click.click_time %></td>
+        <td>
+          <a href="/clicks/<%= click.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/clicks/<%= click.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_click/<%= click.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

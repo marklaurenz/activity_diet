@@ -1,0 +1,70 @@
+<div class="page-header">
+  <h1>Edit Activity #<%= @activity.id %></h1>
+</div>
+
+<% if @activity.errors.any? %>
+  <% @activity.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_activity/<%= @activity.id %>" class="form-horizontal">
+  <!-- Label and input for description -->
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">
+      Description
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @activity.description %>">
+    </div>
+  </div>
+
+  <!-- Label and input for min_people -->
+  <div class="form-group">
+    <label for="min_people" class="col-sm-2 control-label">
+      Min people
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="min_people" name="min_people" placeholder="Min people" class="form-control" value="<%= @activity.min_people %>">
+    </div>
+  </div>
+
+  <!-- Label and input for season -->
+  <div class="form-group">
+    <label for="season" class="col-sm-2 control-label">
+      Season
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="season" name="season" placeholder="Season" class="form-control" value="<%= @activity.season %>">
+    </div>
+  </div>
+
+  <!-- Label and input for zip -->
+  <div class="form-group">
+    <label for="zip" class="col-sm-2 control-label">
+      Zip
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @activity.zip %>">
+    </div>
+  </div>
+
+  <!-- Label and input for website -->
+  <div class="form-group">
+    <label for="website" class="col-sm-2 control-label">
+      Website
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="website" name="website" placeholder="Website" class="form-control" value="<%= @activity.website %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Activity" class="btn btn-primary">
+    </div>
+  </div>
+</form>
