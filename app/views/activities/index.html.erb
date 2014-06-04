@@ -23,7 +23,7 @@
     <% @activities.each do |activity| %>
       <tr>
         <td><%= activity.description %></td>
-        <td><%= activity.image_url %></td>
+        <td><img src="<%= activity.image_url %>" width="100"></td>
         <td><%= activity.min_people %></td>
         <td><%= activity.season %></td>
         <td><%= activity.zip %></td>
