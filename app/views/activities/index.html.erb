@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>Image URL</th>
       <th>Min people</th>
       <th>Season</th>
       <th>Zip</th>
@@ -22,6 +23,7 @@
     <% @activities.each do |activity| %>
       <tr>
         <td><%= activity.description %></td>
+        <td><%= activity.image_url %></td>
         <td><%= activity.min_people %></td>
         <td><%= activity.season %></td>
         <td><%= activity.zip %></td>

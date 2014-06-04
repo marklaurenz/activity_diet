@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new
     @activity.description = params[:description]
+    @activity.image_url = params[:image_url]
     @activity.min_people = params[:min_people]
     @activity.season = params[:season]
     @activity.zip = params[:zip]
@@ -32,8 +33,8 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find(params[:id])
-
     @activity.description = params[:description]
+    @activity.image_url = params[:image_url]
     @activity.min_people = params[:min_people]
     @activity.season = params[:season]
     @activity.zip = params[:zip]
