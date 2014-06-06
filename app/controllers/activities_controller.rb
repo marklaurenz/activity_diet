@@ -54,4 +54,8 @@ class ActivitiesController < ApplicationController
 
     redirect_to "/activities", :notice => "Activity deleted."
   end
+
+  def my_favorites
+    @activities = current_user.favorite_activities
+  end
 end

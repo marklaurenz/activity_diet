@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604022839) do
+ActiveRecord::Schema.define(version: 20140606012710) do
 
   create_table "activities", force: true do |t|
     t.string   "description"
-    t.string   "image_url"
     t.integer  "min_people"
     t.string   "season"
     t.integer  "zip"
@@ -30,6 +29,13 @@ ActiveRecord::Schema.define(version: 20140604022839) do
     t.integer  "activity_id"
     t.string   "activity"
     t.datetime "click_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favorites", force: true do |t|
+    t.integer  "activity_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

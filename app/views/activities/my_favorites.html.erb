@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Activities</h1>
+  <h1>My Favorites</h1>
 </div>
 
 <p><a href="/activities/new" class="btn btn-primary">Add a New Activity</a></p>
@@ -7,12 +7,8 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Image URL</th>
-      <th>Min people</th>
-      <th>Season</th>
-      <th>Zip</th>
-      <th>Website</th>
+      <th>Activity</th>
+      <th>Activity Description</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,19 +18,10 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.description %></td>
         <td><img src="<%= activity.image_url %>" width="100"></td>
-        <td><%= activity.min_people %></td>
-        <td><%= activity.season %></td>
-        <td><%= activity.zip %></td>
-        <td><%= activity.website %></td>
+        <td><%= activity.description %></td>
         <td>
-          <a href="/create_favorite?activity_id=<%= activity.id %>" class="btn btn-success">
-            <i class="fa fa-heart-o"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/activities/<%= activity.id %>" class="btn btn-primary">
+          <a href="/activitys/<%= activity.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
         </td>
@@ -52,4 +39,3 @@
     <% end %>
   </tbody>
 </table>
-

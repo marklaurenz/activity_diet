@@ -1,7 +1,9 @@
 class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
-    @solution = Activity.all.sample(1)
+    # @solution = Activity.all.sample(1)
+    # find an activity at random from the activity list, get that activities image_url and description, report the image and then description
+    @solution = Activity.where( :id => rand(1..Activity.count))
   end
 
   def show
