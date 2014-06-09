@@ -54,13 +54,16 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-3">
           <!-- <img src="http://www1.uwe.ac.uk/images/feature-active.jpg" class="img-responsive"> -->
-          <img src=<%= @solution.first.image_url %> width="500" class="img-responsive">
+          <a href="<%= @url %>">
+            <img src=<%= @solution.first.image_url %> width="500" class="img-responsive">
+          </a>
         </div>
     </div>
     <div class="row">
       <div class="margin">
         <div class="col-md-8 col-md-offset-3">
           <p> <%= @solution.first.description %> </p>
+          <p> <%= @url %> </p>
         </div>
     <div class="row">
       <div class="margin">
